@@ -4,7 +4,6 @@ import urllib.request
 IGNORABLE_KEYWORDS = ["Help:", "File:", "English", "Chinese", "Hindustani", "Hindi", "Spanish", "Arabic", "French", "Russian", "Portugese", "German", "Japanese", "Turkish", "Korean", "Italian", "Latin"]
 
 def traverse(traversal_start_page_title, traversal_len):
-    print()
     if traversal_len > 0:
         with urllib.request.urlopen('http://wikipedia.org/wiki/' + traversal_start_page_title) as response:
             # limit page to searchable section
@@ -22,7 +21,6 @@ def traverse(traversal_start_page_title, traversal_len):
             traverse(next_page_title, traversal_len - 1)
 
 def rtraverse(traversal_start_page_title, traversal_len):
-    print()
     if traversal_len > 0:
         with urllib.request.urlopen('http://wikipedia.org/wiki/' + traversal_start_page_title) as response:
             # limit page to searchable section
@@ -53,7 +51,16 @@ def remove_spaces(txt):
     return txt.replace(" ", "_")
 
 if __name__ == '__main__':
-    if input("Traverse using last links found in pages (Y/N)? ") == "N":
-        traverse(remove_spaces(input("Title of initial page: ")), int(input("Length of traversal: ")))
+    # gather input
+    use_first_links = input("Traverse using last links found in pages (Y/N)? ") == "N"
+    initial_page_title = remove_spaces(input("Title of initial page: "))
+    traversal_len = int(input("Length of traversal: "))
+    
+    # TODO input validation
+
+    # execute traversal
+    print()
+    if use_first_links:
+        traverse(initial_page_title, traversal_len)
     else:
-        rtraverse(remove_spaces(input("Title of initial page: ")), int(input("Length of traversal: ")))
+        rtraverse(initial_page_title, traversal_len)
