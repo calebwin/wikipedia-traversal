@@ -1,4 +1,4 @@
-# What this is
+## What this is
 A trivial script for traversing pages on Wikipedia. What that means is you can provide the title of a page to start at and the script will reiteratively move to the page from either the first or last link of the page a given number of times. What you can get is something like this -
 ```
 Traverse using last links found in pages (Y/N)? N
