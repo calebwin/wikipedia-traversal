@@ -4,6 +4,7 @@ import urllib.request
 IGNORABLE_KEYWORDS = ["Help:", "File:", "English", "Chinese", "Hindustani", "Hindi", "Spanish", "Arabic", "French", "Russian", "Portugese", "German", "Japanese", "Turkish", "Korean", "Italian", "Latin"]
 
 def traverse(traversal_start_page_title, traversal_len):
+    print()
     if traversal_len > 0:
         with urllib.request.urlopen('http://wikipedia.org/wiki/' + traversal_start_page_title) as response:
             # limit page to searchable section
@@ -21,6 +22,7 @@ def traverse(traversal_start_page_title, traversal_len):
             traverse(next_page_title, traversal_len - 1)
 
 def rtraverse(traversal_start_page_title, traversal_len):
+    print()
     if traversal_len > 0:
         with urllib.request.urlopen('http://wikipedia.org/wiki/' + traversal_start_page_title) as response:
             # limit page to searchable section
