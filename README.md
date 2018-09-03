@@ -21,6 +21,6 @@ Science
 Make sure the Python interpreter is added to your path and you're good to go :thumbsup:
 ```
 git clone https://github.com/calebwin/wikipedia-traversal.git
-cd wikipedia-traversal
-python wikipedia_traversal.py
+cd wikipedia-traversal/scripts
+wikipedia_traversal
 ```
