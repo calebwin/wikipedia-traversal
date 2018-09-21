@@ -17,7 +17,7 @@ Linguistics
 Science
 ```
 
-## Usage
+## How to use it
 Make sure the Python interpreter is added to your path and you're good to go :thumbsup:
 ```
 git clone https://github.com/calebwin/wikipedia-traversal.git
