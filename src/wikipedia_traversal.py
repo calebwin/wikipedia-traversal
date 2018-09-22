@@ -57,6 +57,8 @@ if __name__ == '__main__':
     traversal_len = int(input("Length of traversal: "))
     
     # TODO input validation
+    for r in (("http://wikipedia.org/wiki/",""), ("https://wikipedia.org/wiki/", "")):
+        initial_page_title = initial_page_title.replace(*r)
 
     # execute traversal
     print()
